@@ -1,0 +1,34 @@
+Data of users:
+
+
+User#0
+User type       : Admin
+Username        : maaz.i7
+Full name       : Mohammad Maaz N Khan
+Hashed Password : 333C~fgT
+Phone Number    : 9454000504
+Salary          : ₹100000.0
+
+User#1
+User type       : Admin
+Username        : kaif.25
+Full name       : Mohammad Kaif Ali Khan
+Hashed Password : 333C~fgT
+Phone Number    : 8949560345
+Salary          : ₹100000.0
+
+User#2
+User type       : Agronomist
+Username        : dhir.26
+Full name       : Dhir Manoj Kothari
+Hashed Password : 333CvnnK
+Phone Number    : 8049569457
+Salary          : ₹80000.0
+
+User#3
+User type       : Farmer
+Username        : shubh.26
+Full name       : Shubhankan Kumar Verma
+Hashed Password : 333Crfquiqlt`
+Phone Number    : 7669034764
+Salary          : ₹50000.0
