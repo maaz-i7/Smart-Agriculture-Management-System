@@ -1,0 +1,37 @@
+00:00: Heater turned ON | Charges = ₹50.0/hour
+00:00: Dehumidifier turned ON | Charges = ₹50.0/hour
+00:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+00:00: Drain pipe turned ON ₹0.0/hour
+00:15: Sodium Lamp Turned OFF
+00:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+00:45: Sodium Lamp Turned OFF
+01:00: Heater turned OFF
+01:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+01:15: Heater turned ON | Charges = ₹50.0/hour
+01:15: Sodium Lamp Turned OFF
+01:30: Heater turned OFF
+01:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+01:45: Heater turned ON | Charges = ₹50.0/hour
+01:45: Sodium Lamp Turned OFF
+01:45: Drain pipe turned OFF
+02:00: Heater turned OFF
+02:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+02:15: Heater turned ON | Charges = ₹50.0/hour
+02:15: Sodium Lamp Turned OFF
+02:30: Heater turned OFF
+02:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+02:30: Irrigation pipe turned ON | Charges: ₹100.0/hour
+02:45: Heater turned ON | Charges = ₹50.0/hour
+02:45: Sodium Lamp Turned OFF
+03:00: Heater turned OFF
+03:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+03:15: Heater turned ON | Charges = ₹50.0/hour
+03:15: Sodium Lamp Turned OFF
+03:15: Irrigation pipe turned OFF
+03:30: Heater turned OFF
+03:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+03:45: Heater turned ON | Charges = ₹50.0/hour
+03:45: Sodium Lamp Turned OFF
+04:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+04:15: Heater turned OFF
+04:15: Sodium Lamp Turned OFF
