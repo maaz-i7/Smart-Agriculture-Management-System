@@ -3,6 +3,7 @@ package src.Field_Meters.Meters;
 import src.Actuators.Automatic_Actuators.ExhaustFan;
 import src.Actuators.Automatic_Actuators.Heater;
 import src.Field_Meters.*;
+import src.Loggers.MeterLogger;
 import src.Users.*;
 
 // A meter is made of sensor and data logger
@@ -19,14 +20,16 @@ public class Thermometer implements Sensor, DataLogger {
         this.receiveData(timeStamp, value);
     }
 
-    // Data logger receives the sensed data and logs it on the display
+    // Data logger receives the sensed data from Sensor and logs it on the display
     public void receiveData(String timeStamp, double value) {
         this.logData(timeStamp, value);
     }
 
     // Data logger logs and displays the data to Agronomist and ExhaustFan and Heater
     public void logData(String timeStamp, double value) {
+        
         this.data = value;
+        MeterLogger.logTemperature(value);
         Agronomist.readAndAnalyzeTemperatureData(timeStamp, this);
         ExhaustFan.readAndAnalyzeTemperatureData(timeStamp, value);
         Heater.readAndAnalyzeTemperatureData(timeStamp, value);

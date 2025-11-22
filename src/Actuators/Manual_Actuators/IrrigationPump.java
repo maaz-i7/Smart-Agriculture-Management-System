@@ -1,6 +1,6 @@
 package src.Actuators.Manual_Actuators;
 
-import src.Data_Logger.ActuatorLogger;
+import src.Loggers.ActuatorLogger;
 
 public class IrrigationPump {
     

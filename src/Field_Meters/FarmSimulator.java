@@ -10,19 +10,19 @@ import src.Actuators.Manual_Actuators.DrainPipe;
 import src.Actuators.Manual_Actuators.IrrigationPump;
 import src.Actuators.Manual_Actuators.Shade;
 import src.Actuators.Manual_Actuators.SodiumLamp;
-import src.Data_Logger.ActuatorLogger;
+import src.Field_Meters.Meters.Hygrometer;
+import src.Field_Meters.Meters.Photometer;
+import src.Field_Meters.Meters.SoilMoistureMeter;
+import src.Field_Meters.Meters.Thermometer;
+import src.Loggers.ActuatorLogger;
+import src.Loggers.MeterLogger;
 import src.Users.Admin.FieldAdmin;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
-import java.awt.Desktop;
 
 public class FarmSimulator {
 
     // Simulation settings
-    private static final int DELAY_MS = 5000; // Speed of simulation, equivalent to 15 minutes of the day
+    // NOTE: MAKE SURE TO SET LOOK UP TIME IN MeterLogger
+    private static final int DELAY_MS = 200; // Speed of simulation, equivalent to 15 minutes of the day
 
     // --- GLOBAL VARIABLES ---
     /*
@@ -37,9 +37,9 @@ public class FarmSimulator {
         compoundIrrigationPumpEffect - adds up the effect of irrigation pump with time
         compoundDrainPipeEffect      - adds up the effect of drain pipe with time
      */
-    public static double soilMoisture;
     public static double humidity;
     public static double lightIntensity;
+    public static double soilMoisture;
     public static double temperature;
     public static double compoundHumidifierEffect = 0;
     public static double compoundDehumidifierEffect = 0;
@@ -95,98 +95,52 @@ public class FarmSimulator {
         SUNNY_DRY, COLD_RAINY, HOT_HUMID
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void start() throws InterruptedException {
 
         // set current day weather
         WeatherType currentDay = WeatherType.COLD_RAINY;
 
-        // Initialize file writer class
-        String logPath = "src/data_logs/actuator_activities/actuator_activities.txt";
-        ActuatorLogger.init(logPath);
+        String actuatorslogPath = "src/data_logs/actuator_activities/actuator_activities.txt";
+        ActuatorLogger.init(actuatorslogPath);
 
-        // --- 1. DEFINE EXACT FOLDER PATH ---
-        String folderPath = "src\\data_logs\\sensors_data";
-        File dir = new File(folderPath);
+        String meterslogPathTxt = "src/data_logs/sensors_data/sensors_data.txt";
+        String meterslogPathCsv = "src/data_logs/sensors_data/farm_data.csv";
+        MeterLogger.init(meterslogPathTxt, meterslogPathCsv);
 
-        if (!dir.exists()) {
-            boolean created = dir.mkdirs();
-            if (created)
-                System.out.println("Created directory: " + dir.getAbsolutePath());
-        }
+        Hygrometer hygrometer = new Hygrometer();
+        Photometer photometer = new Photometer();
+        SoilMoistureMeter soilMoistureMeter = new SoilMoistureMeter();
+        Thermometer thermometer = new Thermometer();
 
-        // NEW: One single output file
-        File dataFile = new File(dir, "sensors_data.txt"); //for logging on text file
-        File csvFile = new File(dir, "farm_data.csv"); // for logging on excel sheet
+        for (int hour = 0; hour < 24; hour++) {
+            for (int min = 0; min < 60; min += 15) {
 
-        // animating the loading effect
-        System.out.print("\nStarting Simulation");
-        for (int i = 0; i < 10; i++) {
-            System.out.print(".");
-            Thread.sleep(200);
-        }
-        System.out.println("");
+                double timeVal = hour + (min / 60.0);
+                String timeStr = String.format("%02d:%02d", hour, min);
 
-        System.out.println("Open Folder: 'src\\data_logs\\sensors_data' to see logged data");
+                // Generate realistic random values of the 4 parameters
+                generateRealisticData(timeVal, currentDay);
 
-        // --- 2. OPEN SINGLE FILE WRITER ---
-        try (PrintWriter dataWriter = new PrintWriter(new FileWriter(dataFile));
-                PrintWriter csvWriter = new PrintWriter(new FileWriter(csvFile))) {
+                hygrometer.senseData(timeStr, humidity);
+                photometer.senseData(timeStr, lightIntensity);
+                soilMoistureMeter.senseData(timeStr, soilMoisture);
+                thermometer.senseData(timeStr, temperature);
 
-            // Header
-            dataWriter.println("Time  | Temperature  | Humidity   | Light   | SoilMoisture");
-            dataWriter.flush();
-
-            // CSV Header
-            csvWriter.println("Time,Temperature,Humidity,Light,SoilMoisture");
-            csvWriter.flush();
-
-            // Loop 24 hours
-            for (int hour = 0; hour < 24; hour++) {
-                for (int min = 0; min < 60; min += 15) {
-
-                    double timeVal = hour + (min / 60.0);
-                    String timeStr = String.format("%02d:%02d", hour, min);
-
-                    // Generate realistic random values of the 4 parameters
-                    generateRealisticData(timeVal, currentDay);
-
-                    // Write all values in ONE FILE
-                    String row = String.format(
-                            "%-5s | %-12.2f | %-10.2f | %-7.0f | %-12.2f",
-                            timeStr, temperature, humidity, lightIntensity, soilMoisture);
-
-                    dataWriter.println(row);
-                    dataWriter.flush(); // Live update
-
-                    // Write CSV row
-                    String rowCsv = String.format("%s,%.2f,%.2f,%.0f,%.2f",
-                            timeStr, temperature, humidity, lightIntensity, soilMoisture);
-                    csvWriter.println(rowCsv);
-                    csvWriter.flush();
-
-                    Thread.sleep(DELAY_MS);
-                }
+                Thread.sleep(DELAY_MS);
             }
-
-            System.out.println("Simulation Complete.");
-
-            if (Desktop.isDesktopSupported()) {
-                System.out.println("Opening logs folder...");
-                Desktop.getDesktop().open(dir);
-            }
-
-        } catch (IOException e) {
-            System.out.println("CRITICAL ERROR: Could not write to file.");
-            System.out.println("Check if the folder path exists: " + dir.getAbsolutePath());
-            e.printStackTrace();
         }
+
+        System.out.println("Simulation completed for 24 hours.");
 
         // logs total money spent on machines for a day
+        System.out.println("\nOpen: Smart-Agriculture-Management-System\\src\\data_logs\\sensors_data\\farm_data.csv to plot graphs and study data");
         System.out.println("Total money spent today: ₹" + FieldAdmin.totalCost);
         ActuatorLogger.log("Total money spent today: ₹" + FieldAdmin.totalCost);
 
         // Close safely on exit
-        Runtime.getRuntime().addShutdownHook(new Thread(ActuatorLogger::close));
+        ActuatorLogger.close();
+        MeterLogger.close();
+        // Runtime.getRuntime().addShutdownHook(new Thread(ActuatorLogger::close));
     }
 
     // --- PHYSICS LOGIC ---
@@ -246,6 +200,7 @@ public class FarmSimulator {
         compoundHumidifierEffect = updateCompoundEffectIncreaser(Humidifier.class, compoundHumidifierEffect);
         compoundDehumidifierEffect = updateCompoundEffectDecreaser(Dehumidifier.class, compoundDehumidifierEffect);
         humidity += (compoundHumidifierEffect + compoundDehumidifierEffect);
+        humidity = Math.max(0, Math.min(100, humidity));
 
         // 3. SOIL MOISTURE
         if (time == 0.0)

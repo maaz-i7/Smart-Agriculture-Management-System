@@ -1,6 +1,6 @@
 package src.Actuators.Automatic_Actuators;
 
-import src.Data_Logger.ActuatorLogger;
+import src.Loggers.ActuatorLogger;
 import src.Users.Admin.FieldAdmin;
 
 public class Humidifier {

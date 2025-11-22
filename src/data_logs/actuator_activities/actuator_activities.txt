@@ -1,37 +1,287 @@
-00:00: Heater turned ON | Charges = ₹50.0/hour
 00:00: Dehumidifier turned ON | Charges = ₹50.0/hour
 00:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-00:00: Drain pipe turned ON ₹0.0/hour
+00:00: Heater turned ON | Charges = ₹50.0/hour
+00:15: Shade covered | Charges: ₹0.0/hour
 00:15: Sodium Lamp Turned OFF
 00:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+00:30: Shade removed
+00:45: Shade covered | Charges: ₹0.0/hour
 00:45: Sodium Lamp Turned OFF
-01:00: Heater turned OFF
 01:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-01:15: Heater turned ON | Charges = ₹50.0/hour
+01:00: Shade removed
+01:00: Heater turned OFF
+01:15: Shade covered | Charges: ₹0.0/hour
 01:15: Sodium Lamp Turned OFF
-01:30: Heater turned OFF
+01:15: Heater turned ON | Charges = ₹50.0/hour
 01:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-01:45: Heater turned ON | Charges = ₹50.0/hour
+01:30: Shade removed
+01:30: Heater turned OFF
+01:45: Shade covered | Charges: ₹0.0/hour
 01:45: Sodium Lamp Turned OFF
-01:45: Drain pipe turned OFF
-02:00: Heater turned OFF
+01:45: Heater turned ON | Charges = ₹50.0/hour
 02:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-02:15: Heater turned ON | Charges = ₹50.0/hour
+02:00: Shade removed
+02:00: Heater turned OFF
+02:15: Shade covered | Charges: ₹0.0/hour
 02:15: Sodium Lamp Turned OFF
-02:30: Heater turned OFF
+02:15: Heater turned ON | Charges = ₹50.0/hour
 02:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-02:30: Irrigation pipe turned ON | Charges: ₹100.0/hour
-02:45: Heater turned ON | Charges = ₹50.0/hour
+02:30: Shade removed
+02:30: Heater turned OFF
+02:45: Shade covered | Charges: ₹0.0/hour
 02:45: Sodium Lamp Turned OFF
-03:00: Heater turned OFF
+02:45: Heater turned ON | Charges = ₹50.0/hour
 03:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-03:15: Heater turned ON | Charges = ₹50.0/hour
+03:00: Shade removed
+03:15: Shade covered | Charges: ₹0.0/hour
 03:15: Sodium Lamp Turned OFF
-03:15: Irrigation pipe turned OFF
-03:30: Heater turned OFF
+03:15: Heater turned OFF
 03:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-03:45: Heater turned ON | Charges = ₹50.0/hour
+03:30: Shade removed
+03:30: Heater turned ON | Charges = ₹50.0/hour
+03:45: Shade covered | Charges: ₹0.0/hour
 03:45: Sodium Lamp Turned OFF
+03:45: Heater turned OFF
 04:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
-04:15: Heater turned OFF
+04:00: Shade removed
+04:15: Shade covered | Charges: ₹0.0/hour
 04:15: Sodium Lamp Turned OFF
+04:15: Heater turned ON | Charges = ₹50.0/hour
+04:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+04:30: Shade removed
+04:30: Heater turned OFF
+04:45: Shade covered | Charges: ₹0.0/hour
+04:45: Sodium Lamp Turned OFF
+04:45: Heater turned ON | Charges = ₹50.0/hour
+05:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+05:00: Shade removed
+05:00: Heater turned OFF
+05:15: Shade covered | Charges: ₹0.0/hour
+05:15: Sodium Lamp Turned OFF
+05:15: Heater turned ON | Charges = ₹50.0/hour
+05:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+05:30: Shade removed
+05:30: Heater turned OFF
+05:45: Shade covered | Charges: ₹0.0/hour
+05:45: Sodium Lamp Turned OFF
+06:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+06:00: Shade removed
+06:00: Heater turned ON | Charges = ₹50.0/hour
+06:15: Shade covered | Charges: ₹0.0/hour
+06:15: Sodium Lamp Turned OFF
+06:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+06:30: Shade removed
+06:30: Heater turned OFF
+06:45: Shade covered | Charges: ₹0.0/hour
+06:45: Sodium Lamp Turned OFF
+07:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+07:00: Shade removed
+07:00: Heater turned ON | Charges = ₹50.0/hour
+07:15: Shade covered | Charges: ₹0.0/hour
+07:15: Sodium Lamp Turned OFF
+07:15: Heater turned OFF
+07:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+07:30: Shade removed
+07:30: Heater turned ON | Charges = ₹50.0/hour
+07:45: Shade covered | Charges: ₹0.0/hour
+07:45: Sodium Lamp Turned OFF
+07:45: Heater turned OFF
+08:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+08:00: Shade removed
+08:00: Heater turned ON | Charges = ₹50.0/hour
+08:15: Shade covered | Charges: ₹0.0/hour
+08:15: Sodium Lamp Turned OFF
+08:15: Heater turned OFF
+08:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+08:30: Shade removed
+08:45: Shade covered | Charges: ₹0.0/hour
+08:45: Sodium Lamp Turned OFF
+08:45: Heater turned ON | Charges = ₹50.0/hour
+09:00: Shade removed
+09:00: Heater turned OFF
+09:15: Shade covered | Charges: ₹0.0/hour
+09:15: Heater turned ON | Charges = ₹50.0/hour
+09:45: Dehumidifier turned OFF
+09:45: Heater turned OFF
+10:00: Dehumidifier turned ON | Charges = ₹50.0/hour
+10:15: Dehumidifier turned OFF
+10:15: Drain pipe turned ON ₹0.0/hour
+10:15: Heater turned ON | Charges = ₹50.0/hour
+10:30: Drain pipe turned OFF
+10:45: Dehumidifier turned ON | Charges = ₹50.0/hour
+10:45: Heater turned OFF
+11:15: Dehumidifier turned OFF
+11:15: Heater turned ON | Charges = ₹50.0/hour
+11:30: Heater turned OFF
+11:45: Dehumidifier turned ON | Charges = ₹50.0/hour
+11:45: Drain pipe turned ON ₹0.0/hour
+11:45: Heater turned ON | Charges = ₹50.0/hour
+12:00: Drain pipe turned OFF
+12:00: Heater turned OFF
+12:15: Dehumidifier turned OFF
+12:15: Heater turned ON | Charges = ₹50.0/hour
+12:30: Dehumidifier turned ON | Charges = ₹50.0/hour
+12:30: Heater turned OFF
+12:45: Dehumidifier turned OFF
+12:45: Drain pipe turned ON ₹0.0/hour
+12:45: Heater turned ON | Charges = ₹50.0/hour
+13:00: Drain pipe turned OFF
+13:00: Heater turned OFF
+13:15: Heater turned ON | Charges = ₹50.0/hour
+13:30: Dehumidifier turned ON | Charges = ₹50.0/hour
+13:30: Drain pipe turned ON ₹0.0/hour
+13:30: Heater turned OFF
+13:45: Dehumidifier turned OFF
+13:45: Drain pipe turned OFF
+13:45: Heater turned ON | Charges = ₹50.0/hour
+14:00: Dehumidifier turned ON | Charges = ₹50.0/hour
+14:00: Heater turned OFF
+14:30: Heater turned ON | Charges = ₹50.0/hour
+14:45: Dehumidifier turned OFF
+14:45: Drain pipe turned ON ₹0.0/hour
+15:00: Shade removed
+15:00: Drain pipe turned OFF
+15:00: Heater turned OFF
+15:15: Dehumidifier turned ON | Charges = ₹50.0/hour
+15:15: Shade covered | Charges: ₹0.0/hour
+15:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+15:30: Shade removed
+15:30: Heater turned ON | Charges = ₹50.0/hour
+15:45: Dehumidifier turned OFF
+15:45: Shade covered | Charges: ₹0.0/hour
+15:45: Sodium Lamp Turned OFF
+15:45: Drain pipe turned ON ₹0.0/hour
+16:00: Dehumidifier turned ON | Charges = ₹50.0/hour
+16:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+16:00: Shade removed
+16:00: Drain pipe turned OFF
+16:00: Heater turned OFF
+16:15: Dehumidifier turned OFF
+16:15: Shade covered | Charges: ₹0.0/hour
+16:15: Sodium Lamp Turned OFF
+16:15: Heater turned ON | Charges = ₹50.0/hour
+16:30: Dehumidifier turned ON | Charges = ₹50.0/hour
+16:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+16:30: Shade removed
+16:30: Drain pipe turned ON ₹0.0/hour
+16:30: Heater turned OFF
+16:45: Dehumidifier turned OFF
+16:45: Shade covered | Charges: ₹0.0/hour
+16:45: Sodium Lamp Turned OFF
+16:45: Drain pipe turned OFF
+16:45: Heater turned ON | Charges = ₹50.0/hour
+17:00: Dehumidifier turned ON | Charges = ₹50.0/hour
+17:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+17:00: Shade removed
+17:00: Heater turned OFF
+17:15: Dehumidifier turned OFF
+17:15: Shade covered | Charges: ₹0.0/hour
+17:15: Sodium Lamp Turned OFF
+17:15: Drain pipe turned ON ₹0.0/hour
+17:15: Heater turned ON | Charges = ₹50.0/hour
+17:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+17:30: Shade removed
+17:30: Drain pipe turned OFF
+17:30: Heater turned OFF
+17:45: Dehumidifier turned ON | Charges = ₹50.0/hour
+17:45: Shade covered | Charges: ₹0.0/hour
+17:45: Sodium Lamp Turned OFF
+17:45: Heater turned ON | Charges = ₹50.0/hour
+18:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+18:00: Shade removed
+18:00: Heater turned OFF
+18:15: Dehumidifier turned OFF
+18:15: Shade covered | Charges: ₹0.0/hour
+18:15: Sodium Lamp Turned OFF
+18:15: Heater turned ON | Charges = ₹50.0/hour
+18:30: Dehumidifier turned ON | Charges = ₹50.0/hour
+18:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+18:30: Shade removed
+18:30: Heater turned OFF
+18:45: Shade covered | Charges: ₹0.0/hour
+18:45: Sodium Lamp Turned OFF
+18:45: Drain pipe turned ON ₹0.0/hour
+18:45: Heater turned ON | Charges = ₹50.0/hour
+19:00: Dehumidifier turned OFF
+19:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+19:00: Shade removed
+19:00: Drain pipe turned OFF
+19:00: Heater turned OFF
+19:15: Shade covered | Charges: ₹0.0/hour
+19:15: Sodium Lamp Turned OFF
+19:15: Heater turned ON | Charges = ₹50.0/hour
+19:30: Dehumidifier turned ON | Charges = ₹50.0/hour
+19:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+19:30: Shade removed
+19:45: Shade covered | Charges: ₹0.0/hour
+19:45: Sodium Lamp Turned OFF
+19:45: Heater turned OFF
+20:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+20:00: Shade removed
+20:00: Heater turned ON | Charges = ₹50.0/hour
+20:15: Dehumidifier turned OFF
+20:15: Shade covered | Charges: ₹0.0/hour
+20:15: Sodium Lamp Turned OFF
+20:15: Drain pipe turned ON ₹0.0/hour
+20:15: Heater turned OFF
+20:30: Dehumidifier turned ON | Charges = ₹50.0/hour
+20:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+20:30: Shade removed
+20:30: Drain pipe turned OFF
+20:30: Heater turned ON | Charges = ₹50.0/hour
+20:45: Dehumidifier turned OFF
+20:45: Shade covered | Charges: ₹0.0/hour
+20:45: Sodium Lamp Turned OFF
+20:45: Heater turned OFF
+21:00: Dehumidifier turned ON | Charges = ₹50.0/hour
+21:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+21:00: Shade removed
+21:00: Heater turned ON | Charges = ₹50.0/hour
+21:15: Shade covered | Charges: ₹0.0/hour
+21:15: Sodium Lamp Turned OFF
+21:15: Heater turned OFF
+21:30: Dehumidifier turned OFF
+21:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+21:30: Shade removed
+21:30: Drain pipe turned ON ₹0.0/hour
+21:30: Heater turned ON | Charges = ₹50.0/hour
+21:45: Dehumidifier turned ON | Charges = ₹50.0/hour
+21:45: Shade covered | Charges: ₹0.0/hour
+21:45: Sodium Lamp Turned OFF
+21:45: Drain pipe turned OFF
+21:45: Heater turned OFF
+22:00: Dehumidifier turned OFF
+22:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+22:00: Shade removed
+22:00: Heater turned ON | Charges = ₹50.0/hour
+22:15: Dehumidifier turned ON | Charges = ₹50.0/hour
+22:15: Shade covered | Charges: ₹0.0/hour
+22:15: Sodium Lamp Turned OFF
+22:15: Drain pipe turned ON ₹0.0/hour
+22:30: Dehumidifier turned OFF
+22:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+22:30: Shade removed
+22:30: Drain pipe turned OFF
+22:30: Heater turned OFF
+22:45: Dehumidifier turned ON | Charges = ₹50.0/hour
+22:45: Shade covered | Charges: ₹0.0/hour
+22:45: Sodium Lamp Turned OFF
+22:45: Heater turned ON | Charges = ₹50.0/hour
+23:00: Dehumidifier turned OFF
+23:00: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+23:00: Shade removed
+23:00: Heater turned OFF
+23:15: Dehumidifier turned ON | Charges = ₹50.0/hour
+23:15: Shade covered | Charges: ₹0.0/hour
+23:15: Sodium Lamp Turned OFF
+23:15: Drain pipe turned ON ₹0.0/hour
+23:15: Heater turned ON | Charges = ₹50.0/hour
+23:30: Dehumidifier turned OFF
+23:30: Sodium Lamp Turned ON | Charges: ₹100.0/hour
+23:30: Shade removed
+23:30: Drain pipe turned OFF
+23:45: Dehumidifier turned ON | Charges = ₹50.0/hour
+23:45: Shade covered | Charges: ₹0.0/hour
+23:45: Sodium Lamp Turned OFF
+23:45: Heater turned OFF
+Total money spent today: ₹1475.0

@@ -83,12 +83,12 @@ public class Admin extends Person {
 
         public static double MIN_HUMIDITY_THRESHOLD = 0;
         public static double MAX_HUMIDITY_THRESHOLD = 10;
-        public static double MAX_SOIL_MOISTURE_THRESHOLD = 90;
         public static double MIN_SOIL_MOISTURE_THRESHOLD = 80;
+        public static double MAX_SOIL_MOISTURE_THRESHOLD = 90;
         public static double MIN_LIGHT_INTENSITY_THRESHOLD = 5000;
-        public static double MAX_LIGHT_INTENSITY_THRESHOLD = 10000;
-        public static double MIN_TEMPERATURE_THRESHOLD = 70;
-        public static double MAX_TEMPERATURE_THRESHOLD = 90;
+        public static double MAX_LIGHT_INTENSITY_THRESHOLD = 6000;
+        public static double MIN_TEMPERATURE_THRESHOLD = 20;
+        public static double MAX_TEMPERATURE_THRESHOLD = 30;
         public static double totalCost = 0;
         
         public void setMinHumidityThreshold(double value) {
