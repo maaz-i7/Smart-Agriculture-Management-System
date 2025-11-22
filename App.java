@@ -1,18 +1,15 @@
 import java.util.Scanner;
 
 import src.Field_Meters.FarmSimulator;
-import src.Field_Meters.Sensor;
-import src.Loggers.ActuatorLogger;
 import src.Secure_Authentication.Authentication;
 import src.Users.Admin;
-import src.Users.Admin.FieldAdmin;
 import src.Users.Agronomist;
 import src.Users.Farmer;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
-/* 
+
         System.out.println("-------------------SMART AGRICULTURE MANAGEMENT SYSTEM-------------------");
 
         System.out.println("\n--- Create Users Admin Account ---");
@@ -113,7 +110,7 @@ public class App {
             System.out.print(".");
             Thread.sleep(200);
         }
-*/
+
         FarmSimulator.start();
     }
 }
