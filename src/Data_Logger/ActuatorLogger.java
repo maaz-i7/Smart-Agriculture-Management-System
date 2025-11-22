@@ -2,6 +2,9 @@ package src.Data_Logger;
 
 import java.io.*;
 
+/*
+ * This class opens up the actuator_activities.txt file to log actuator activities
+ */
 public final class ActuatorLogger {
 
     private static PrintWriter writer;
@@ -43,3 +46,4 @@ public final class ActuatorLogger {
         }
     }
 }
+
