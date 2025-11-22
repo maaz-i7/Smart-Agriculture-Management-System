@@ -49,12 +49,12 @@ public class FarmSimulator {
     public static double compoundDrainPipeEffect = 0;
 
     // calculates the gradual effect of machines that decrease a parameter over a period of time
-    public static double updateCompoundEffectDecreaser(Class<?> clazz, double value) {
+    public static double updateCompoundEffectDecreaser(Class<?> Machine, double value) {
 
         try {
-            boolean active = (boolean) clazz.getField("active").getBoolean(null);
-            double effect = (double) clazz.getField("effect").getDouble(null);
-            double cost = (double) clazz.getField("operationCharges").getDouble(null);
+            boolean active = (boolean) Machine.getField("active").getBoolean(null);
+            double effect = (double) Machine.getField("effect").getDouble(null);
+            double cost = (double) Machine.getField("operationCharges").getDouble(null);
 
             // add to cost the cost of operating for 15 minutes
             FieldAdmin.totalCost += (active ? (cost/4) : 0);
@@ -70,12 +70,12 @@ public class FarmSimulator {
     }
 
     // calculates the gradual effect of machines that increase a parameter over a period of time
-    public static double updateCompoundEffectIncreaser(Class<?> clazz, double value) {
+    public static double updateCompoundEffectIncreaser(Class<?> Machine, double value) {
 
         try {
-            boolean active = (boolean) clazz.getField("active").getBoolean(null);
-            double effect = (double) clazz.getField("effect").getDouble(null);
-            double cost = (double) clazz.getField("operationCharges").getDouble(null);
+            boolean active = (boolean) Machine.getField("active").getBoolean(null);
+            double effect = (double) Machine.getField("effect").getDouble(null);
+            double cost = (double) Machine.getField("operationCharges").getDouble(null);
 
             // add to cost the cost of operating for 15 minutes
             FieldAdmin.totalCost += (active ? (cost/4) : 0);
