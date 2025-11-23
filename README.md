@@ -52,6 +52,7 @@ Smart_Agriculture_System/
 │  │     └─ SodiumLamp.java
 │  ├─ Data_Logger/
 │  │  └─ ActuatorLogger.java
+|  |  └─ MeterLogger.java
 │  ├─ Secure_Authentication/
 │  │  ├─ Authentication.java
 │  │  ├─ Encryptor.java         # Simulated hashing mechanism
