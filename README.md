@@ -28,45 +28,58 @@ This Java project simulates a small Smart Agriculture Management System. It mode
 Below is a human-friendly tree of the main files (trimmed to important ones):
 
 ```
-Smart_Agriculture_System/
-├─ App.java                     # Main entrypoint (CLI)
-├─ src/
-│  ├─ Field_Meters/
-│  │  ├─ FarmSimulator.java     # Sensor simulator & data feeder
-│  │  ├─ Sensor.java            # Sensor interface + start logic
-│  │  ├─ Meters/                # Individual meter implementations
-│  │  │  ├─ Hygrometer.java
-│  │  │  ├─ Photometer.java
-│  │  │  ├─ SoilMoistureMeter.java
-│  │  │  └─ Thermometer.java
-│  ├─ Actuators/
-│  │  ├─ Automatic_Actuators/   # Automatic actuators triggered by simulation
-│  │  │  ├─ Dehumidifier.java
-│  │  │  ├─ ExhaustFan.java
-│  │  │  ├─ Heater.java
-│  │  │  └─ Humidifier.java
-│  │  └─ Manual_Actuators/      # Manual actuators controlled by users
-│  │     ├─ DrainPipe.java
-│  │     ├─ IrrigationPump.java
-│  │     ├─ Shade.java
-│  │     └─ SodiumLamp.java
-│  ├─ Data_Logger/
-│  │  └─ ActuatorLogger.java
-|  |  └─ MeterLogger.java
-│  ├─ Secure_Authentication/
-│  │  ├─ Authentication.java
-│  │  ├─ Encryptor.java         # Simulated hashing mechanism
-│  │  └─ Authentication_Exceptions/ (various exceptions)
-│  ├─ Users/
-│  │  ├─ Person.java
-│  │  ├─ Admin.java
-│  │  ├─ Agronomist.java
-│  │  └─ Farmer.java
-│  └─ data_logs/                # example logs and datasets
-│     ├─ actuator_activities/actuator_activities.txt
-│     └─ sensors_data/
-│        ├─ farm_data.csv
-│        └─ sensors_data.txt
+- Smart-Agriculture-Management-System-main/
+  - App.java
+  - README.md (original in repo)
+  - excel_logs.png
+  - file_logs.png
+- src/
+  - Actuators/
+    - Automatic_Actuators/
+      - Dehumidifier.java
+      - ExhaustFan.java
+      - Heater.java
+      - Humidifier.java
+    - Manual_Actuators/
+      - DrainPipe.java
+      - IrrigationPump.java
+      - Shade.java
+      - SodiumLamp.java
+  - Field_Meters/
+    - DataLogger.java
+    - FarmSimulator.java
+    - Sensor.java
+    - Meters/
+      - Hygrometer.java
+      - Photometer.java
+      - SoilMoistureMeter.java
+      - Thermometer.java
+  - Loggers/
+    - ActuatorLogger.java
+    - MeterLogger.java
+  - Secure_Authentication/
+    - Authentication.java
+    - Encryptor.java
+    - Authentication_Exceptions/
+      - IncorrectPasswordException.java
+      - InvalidNameException.java
+      - InvalidUserTypeException.java
+      - InvalidUsernameException.java
+      - UserDoesNotExistException.java
+      - WeakPasswordException.java
+  - Users/
+    - Admin.java
+    - Agronomist.java
+    - Farmer.java
+    - Person.java
+  - data_logs/
+    - actuator_activities/
+      - actuator_activities.txt
+    - sensors_data/
+      - farm_data.csv
+      - sensors_data.txt
+    - users_data/
+      - users_data.txt
 ```
 
 ## Quick start — build & run
