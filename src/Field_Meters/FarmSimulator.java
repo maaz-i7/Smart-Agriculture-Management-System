@@ -48,48 +48,6 @@ public class FarmSimulator {
     public static double compoundIrrigationPumpEffect = 0;
     public static double compoundDrainPipeEffect = 0;
 
-    // calculates the gradual effect of machines that decrease a parameter over a period of time
-    public static double updateCompoundEffectDecreaser(Class<?> Machine, double value) {
-
-        try {
-            boolean active = (boolean) Machine.getField("active").getBoolean(null);
-            double effect = (double) Machine.getField("effect").getDouble(null);
-            double cost = (double) Machine.getField("operationCharges").getDouble(null);
-
-            // add to cost the cost of operating for 15 minutes
-            FieldAdmin.totalCost += (active ? (cost/4) : 0);
-
-            // If the machine is active, it will add up to the compound effect, otherwise, its effect will reduce gradually
-            double compoundEffect = value + (active ? 1 : -1) * effect;
-            return (compoundEffect > 0) ? 0 : compoundEffect;
-        } catch (Exception e) {
-            System.out.println("Error in FarmSimulation.java, line 38");
-        }
-
-        return 0;
-    }
-
-    // calculates the gradual effect of machines that increase a parameter over a period of time
-    public static double updateCompoundEffectIncreaser(Class<?> Machine, double value) {
-
-        try {
-            boolean active = (boolean) Machine.getField("active").getBoolean(null);
-            double effect = (double) Machine.getField("effect").getDouble(null);
-            double cost = (double) Machine.getField("operationCharges").getDouble(null);
-
-            // add to cost the cost of operating for 15 minutes
-            FieldAdmin.totalCost += (active ? (cost/4) : 0);
-
-            // If the machine is active, it will add up to the compound effect, otherwise, its effect will reduce gradually
-            double compoundEffect = value + (active ? 1 : -1) * effect;
-            return (compoundEffect < 0) ? 0 : compoundEffect;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return 0;
-    }
-
     // three types of weather conditions to simulate
     public enum WeatherType {
         SUNNY_DRY, COLD_RAINY, HOT_HUMID
@@ -134,8 +92,8 @@ public class FarmSimulator {
 
         // logs total money spent on machines for a day
         System.out.println("\nOpen: Smart-Agriculture-Management-System\\src\\data_logs\\sensors_data\\farm_data.csv to plot graphs and study data");
-        System.out.println("Total money spent today: ₹" + FieldAdmin.totalCost);
-        ActuatorLogger.log("Total money spent today: ₹" + FieldAdmin.totalCost);
+        System.out.println("\nTotal money spent today: ₹" + FieldAdmin.totalCost);
+        ActuatorLogger.log("\nTotal money spent today: ₹" + FieldAdmin.totalCost);
 
         // Close safely on exit
         ActuatorLogger.close();
@@ -220,5 +178,47 @@ public class FarmSimulator {
         compoundDrainPipeEffect = updateCompoundEffectDecreaser(DrainPipe.class, compoundDrainPipeEffect);
         soilMoisture += (compoundIrrigationPumpEffect + compoundDrainPipeEffect);
         soilMoisture = Math.max(0, Math.min(100, soilMoisture));
+    }
+
+    // calculates the gradual effect of machines that decrease a parameter over a period of time
+    public static double updateCompoundEffectDecreaser(Class<?> Machine, double value) {
+
+        try {
+            boolean active = (boolean) Machine.getField("active").getBoolean(null);
+            double effect = (double) Machine.getField("effect").getDouble(null);
+            double cost = (double) Machine.getField("operationCharges").getDouble(null);
+
+            // add to cost the cost of operating for 15 minutes
+            FieldAdmin.totalCost += (active ? (cost/4) : 0);
+
+            // If the machine is active, it will add up to the compound effect, otherwise, its effect will reduce gradually
+            double compoundEffect = value + (active ? 1 : -1) * effect;
+            return (compoundEffect > 0) ? 0 : compoundEffect;
+        } catch (Exception e) {
+            System.out.println("Error in FarmSimulation.java, line 38");
+        }
+
+        return 0;
+    }
+
+    // calculates the gradual effect of machines that increase a parameter over a period of time
+    public static double updateCompoundEffectIncreaser(Class<?> Machine, double value) {
+
+        try {
+            boolean active = (boolean) Machine.getField("active").getBoolean(null);
+            double effect = (double) Machine.getField("effect").getDouble(null);
+            double cost = (double) Machine.getField("operationCharges").getDouble(null);
+
+            // add to cost the cost of operating for 15 minutes
+            FieldAdmin.totalCost += (active ? (cost/4) : 0);
+
+            // If the machine is active, it will add up to the compound effect, otherwise, its effect will reduce gradually
+            double compoundEffect = value + (active ? 1 : -1) * effect;
+            return (compoundEffect < 0) ? 0 : compoundEffect;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return 0;
     }
 }
