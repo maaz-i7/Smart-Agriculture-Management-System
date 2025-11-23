@@ -105,6 +105,7 @@ public class App {
         // Log all users to usersData.txt
         Authentication.logAllDetailsOfUsers();
 
+        // Animate loading
         System.out.print("\nStarting Simulation");
         for (int i = 0; i < 10; i++) {
             System.out.print(".");
@@ -113,4 +114,5 @@ public class App {
 
         FarmSimulator.start();
     }
+
 }
