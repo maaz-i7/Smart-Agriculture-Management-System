@@ -12,7 +12,7 @@
 7. Class-by-class description
 8. Build & run instructions (exact commands)
 9. Input / Output / Generated files
-10. 
+
 ---
 
 ## 1) Project overview
