@@ -1,9 +1,0 @@
-Input the status of machines: ON/OFF/Default
-Humidifier      : Default
-Dehumidifier    : Default
-Heater          : Default
-Exhaust_Fan     : Default
-Irrigation_Pump : Default
-Drain_Pipe      : Default
-Sodium_Lamp     : Default
-Shade           : Default
