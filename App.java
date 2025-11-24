@@ -9,7 +9,7 @@ import src.Users.Farmer;
 public class App {
 
     public static void main(String[] args) throws Exception {
-/* 
+
         System.out.println("-------------------SMART AGRICULTURE MANAGEMENT SYSTEM-------------------");
 
         System.out.println("\n--- Create Users Admin Account ---");
@@ -104,7 +104,7 @@ public class App {
 
         // Log all users to usersData.txt
         Authentication.logAllDetailsOfUsers();
-*/
+
         // Animate loading
         System.out.print("\nStarting Simulation");
         for (int i = 0; i < 10; i++) {
