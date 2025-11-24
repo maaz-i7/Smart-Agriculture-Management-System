@@ -15,7 +15,6 @@ public final class MeterLogger {
     public static double lightIntensity = -1000;
     public static double soilMoisture = -1000;
     public static double temperature = -1000;
-    public static boolean active;
     static Thread meterLoggerThread;
 
     // Initialize ONCE at app start
@@ -52,7 +51,6 @@ public final class MeterLogger {
             throw new RuntimeException("Failed to initialize ActuatorLogger", e);
         }
 
-        active = true;
         meterLoggerThread = new Thread(() -> {  
             startReceivingData();    
         });
@@ -61,7 +59,7 @@ public final class MeterLogger {
 
     public static void startReceivingData() {
 
-        while(active) {
+        while(!Thread.currentThread().isInterrupted()) {
             while(humidity == -1000 || lightIntensity == -1000 || soilMoisture == -1000 || temperature == -1000 || timeStamp == null) {
 
                 try {Thread.sleep(100);} 
@@ -124,7 +122,6 @@ public final class MeterLogger {
     public static void close() {
 
         meterLoggerThread.interrupt();
-        active = false;
         
         if (txtWriter != null)
             txtWriter.close();

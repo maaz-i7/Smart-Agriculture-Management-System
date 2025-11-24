@@ -20,7 +20,7 @@ public class Shade {
 
     public static void turnOn(String timeStamp) {
 
-        if(active)
+        if(active || manualSwitch == 1 || manualSwitch == -1)
             return;
 
         ActuatorLogger.log(timeStamp + ": Shade covered | Charges: ₹" + operationCharges + "/hour");
@@ -29,7 +29,7 @@ public class Shade {
 
     public static void turnOff(String timeStamp) {
         
-        if(!active)
+        if(!active || manualSwitch == 1 || manualSwitch == -1)
             return;
 
         ActuatorLogger.log(timeStamp + ": Shade removed");

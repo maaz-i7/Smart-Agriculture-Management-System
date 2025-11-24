@@ -16,13 +16,14 @@ import src.Field_Meters.Meters.SoilMoistureMeter;
 import src.Field_Meters.Meters.Thermometer;
 import src.Loggers.ActuatorLogger;
 import src.Loggers.MeterLogger;
+import src.Operation_Switch.SwitchStatus;
 import src.Users.Admin.FieldAdmin;
 
 public class FarmSimulator {
 
     // Simulation settings
     // NOTE: MAKE SURE TO SET LOOK UP TIME IN MeterLogger
-    private static final int DELAY_MS = 200; // Speed of simulation, equivalent to 15 minutes of the day
+    private static final int DELAY_MS = 2000; // Speed of simulation, equivalent to 15 minutes of the day
 
     // --- GLOBAL VARIABLES ---
     /*
@@ -37,6 +38,7 @@ public class FarmSimulator {
         compoundIrrigationPumpEffect - adds up the effect of irrigation pump with time
         compoundDrainPipeEffect      - adds up the effect of drain pipe with time
      */
+    public static String currentTime;
     public static double humidity;
     public static double lightIntensity;
     public static double soilMoisture;
@@ -60,10 +62,12 @@ public class FarmSimulator {
 
         String actuatorslogPath = "src/data_logs/actuator_activities/actuator_activities.txt";
         ActuatorLogger.init(actuatorslogPath);
-
+        
         String meterslogPathTxt = "src/data_logs/sensors_data/sensors_data.txt";
         String meterslogPathCsv = "src/data_logs/sensors_data/farm_data.csv";
         MeterLogger.init(meterslogPathTxt, meterslogPathCsv);
+
+        SwitchStatus.init();
 
         Hygrometer hygrometer = new Hygrometer();
         Photometer photometer = new Photometer();
@@ -75,6 +79,7 @@ public class FarmSimulator {
 
                 double timeVal = hour + (min / 60.0);
                 String timeStr = String.format("%02d:%02d", hour, min);
+                currentTime = timeStr;
 
                 // Generate realistic random values of the 4 parameters
                 generateRealisticData(timeVal, currentDay);
@@ -98,7 +103,7 @@ public class FarmSimulator {
         // Close safely on exit
         ActuatorLogger.close();
         MeterLogger.close();
-        // Runtime.getRuntime().addShutdownHook(new Thread(ActuatorLogger::close));
+        SwitchStatus.close();
     }
 
     // --- PHYSICS LOGIC ---

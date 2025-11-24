@@ -21,10 +21,6 @@ public class ExhaustFan {
 
     public static void readAndAnalyzeTemperatureData(String timeStamp, double value) {
             
-        if (manualSwitch == -1 || manualSwitch == 1) {
-            return;
-        }
-
         if (FieldAdmin.MIN_TEMPERATURE_THRESHOLD <= value && value <= FieldAdmin.MAX_TEMPERATURE_THRESHOLD) {
             
             ExhaustFan.turnOff(timeStamp);
@@ -40,7 +36,7 @@ public class ExhaustFan {
 
     public static void turnOn(String timeStamp) {
         
-        if (active)
+        if (active || manualSwitch == 1 || manualSwitch == -1)
             return;
 
         ActuatorLogger.log(timeStamp + ": Exhaust Fan turned ON | Charges = ₹" + operationCharges + "/hour");
@@ -49,7 +45,7 @@ public class ExhaustFan {
 
     public static void turnOff(String timeStamp) {
          
-        if (!active)
+        if (!active || manualSwitch == 1 || manualSwitch == -1)
             return;
 
         ActuatorLogger.log(timeStamp + ": Exhaust Fan turned OFF");

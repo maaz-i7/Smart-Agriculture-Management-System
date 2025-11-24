@@ -21,10 +21,6 @@ public class Humidifier {
 
     public static void readAndAnalyzeHumidityData(String timeStamp, double value) {
 
-        if (manualSwitch == -1 || manualSwitch == 1) {
-            return;
-        }
-
         if (FieldAdmin.MIN_HUMIDITY_THRESHOLD <= value && value <= FieldAdmin.MAX_HUMIDITY_THRESHOLD) {
             
             Humidifier.turnOff(timeStamp);
@@ -40,7 +36,7 @@ public class Humidifier {
 
     public static void turnOn(String timeStamp) {
 
-        if (active)
+        if (active || manualSwitch == 1 || manualSwitch == -1)
             return;
 
         ActuatorLogger.log(timeStamp + ": Humidifier turned ON | Charges = ₹" + operationCharges + "/hour");
@@ -49,7 +45,7 @@ public class Humidifier {
 
     public static void turnOff(String timeStamp) {
 
-        if (!active)
+        if (!active || manualSwitch == 1 || manualSwitch == -1)
             return;
 
         ActuatorLogger.log(timeStamp + ": Humidifier turned OFF");
